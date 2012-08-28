@@ -1,0 +1,15 @@
+Chef-server demo
+================
+
+Howto
+----
+
+1. copy omnibus installer  .deb into pkg
+
+2. export OPC_INSTALLER pointing to it
+
+> export OPC_INSTALLER=pkg/chef-server_0.10.8-194-g3f47a07-1.ubuntu.10.04_amd64.deb
+
+3. vagrant up
+
+You should have a set up knife.rb for the vagrant user
