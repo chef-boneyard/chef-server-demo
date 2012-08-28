@@ -51,6 +51,9 @@ Vagrant::Config.run do |config|
 
       chef.log_level = :debug
       chef.cookbooks_path = "cookbooks"
+      chef.json = {
+        'chef-server' => chef_config
+      }
       chef.add_recipe "chef-server-demo"
     end
   end
