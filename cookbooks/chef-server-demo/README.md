@@ -8,16 +8,10 @@ Requirements
 Assumes a erchef-based open source chef server has been set up
 and has configuration in `/etc/chef-server`
 
-Attributes
-==========
-
-### installer_file
-Location of installer file, either on local file system or as a
-URL of a remote installer.
-
-### configuration
-A map of additional configuration key value pairs to be inserted
-into `/etc/chef-server/chef-server.rb`
+Usage
+=====
+The `chef-server-demo::default` recipe sets up the PATH and configures
+knife for the vagrant user.
 
 LICENSE
 =======

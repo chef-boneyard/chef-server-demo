@@ -20,15 +20,15 @@ the vm and starting vagrant
 2. export environment variable OSC_INSTALLER and set it to point at
    the omnibus installer .deb:
 
-> export OSC_INSTALLER=pkg/chef-server_0.10.8-194-g3f47a07-1.ubuntu.10.04_amd64.deb
+    > export OSC_INSTALLER=pkg/chef-server_0.10.8-194-g3f47a07-1.ubuntu.10.04_amd64.deb
 
 3. If you want, check it has been set correctly:
 
-> echo $OSC_INSTALLER
+    > echo $OSC_INSTALLER
 
 4. run:
 
-> vagrant up
+    > vagrant up
 
 Once the vagrant run is finished, the vagrant box will be set up and open source
 chef server will be running.  If there are any errors, they should be visible in
