@@ -31,8 +31,6 @@ Vagrant::Config.run do |config|
 
     chefs_config.vm.box = "opscode-ubuntu-10.04"
     chefs_config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-10.04.box"
-    #chefs_config.vm.box = "opscode-ubuntu-12.04"
-    #chefs_config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-12.04.box"
 
     chefs_config.vm.host_name = "chefserver"
 
