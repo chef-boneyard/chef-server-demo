@@ -4,12 +4,22 @@ Chef-server demo
 Howto
 ----
 
-1. copy omnibus installer  .deb into pkg
+1. copy a valid open source chef omnibus installer .deb into pkg
 
-2. export OPC_INSTALLER pointing to it
+2. export environment variable OSC_INSTALLER and set it to point at the omnibus installer .deb, like so:
 
-> export OPC_INSTALLER=pkg/chef-server_0.10.8-194-g3f47a07-1.ubuntu.10.04_amd64.deb
+> export OSC_INSTALLER=pkg/chef-server_0.10.8-194-g3f47a07-1.ubuntu.10.04_amd64.deb
 
-3. vagrant up
+3. If you want, check it has been set correctly:
 
-You should have a set up knife.rb for the vagrant user
+> echo $OSC_INSTALLER
+
+4. run:
+
+> vagrant up
+
+Once the vagrant run is finished, the vagrant box will be setup with open source chef server running on it.
+
+If there are any errors, they should be visible in the output from the vagrant up command.
+
+If all was successful, you will have a set up knife.rb for the vagrant user and can run knife against the server.
