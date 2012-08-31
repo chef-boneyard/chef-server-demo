@@ -13,8 +13,8 @@ Setting it up
 -------------
 
 In order to get started you need to have a copy of the latest omnibus
-generated `.deb` for chef-server.  You can get this [here](). Copy the
-`.deb` into a location that is shared with the VM and starting vagrant.
+generated preview `.deb` for chef-server.  You can get this [here](http://wiki.opscode.com/display/chef/Erchef+Open+Source+Chef+Server).
+Copy the `.deb` into a location that is shared with the VM and starting vagrant.
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (exercise left to
    the reader). Next, install the required gems using bundler. Execute the following
