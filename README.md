@@ -4,7 +4,7 @@ Chef-server demo
 Overview
 --------
 
-elcome to the Chef 11 Server Preview! The preview includes erchef,
+Welcome to the Chef 11 Server Preview! The preview includes erchef,
 the new Chef API server written in Erlang. This repository provides
 a `Vagrantfile` and installation cookbooks to set up a self-contained
 vm running a complete Chef server environment for your demo pleasure.
