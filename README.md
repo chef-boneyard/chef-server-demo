@@ -30,9 +30,6 @@ generated `.deb` for chef-server.  You can get this [here](). Copy the
 
 ```
     curl -O $URL_FOR_CHEF_SERVER_DEB
-```
-
-```
     mv chef-server.deb pkg/
 ```
 
@@ -41,9 +38,6 @@ generated `.deb` for chef-server.  You can get this [here](). Copy the
 
 ```
    export OSC_INSTALLER=pkg/CHEF_SERVER.deb
-```
-
-```
     bin/vagrant up
 ```
 
