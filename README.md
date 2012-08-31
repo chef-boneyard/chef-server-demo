@@ -23,24 +23,27 @@ start vagrant.
    the reader). Next, install the required gems using bundler. Execute the following
    commands from inside the chef-server-demo directory.
 
+    ```
     which bundle || gem install bundler
-    
     bundle install --binstubs
-
+    ```
+    
 2. Copy the Chef server .deb [file](http://wiki.opscode.com) into the pkg
    sub-directory:
 
+    ```
     curl -O $URL_FOR_CHEF_SERVER_DEB
-    
     mv CHEF_SERVER.deb pkg/
-
+    ```
+    
 3. Export environment variable `OSC_INSTALLER`, setting it to point at
    the omnibus installer .deb and provision your Erchef powered Chef server:
 
+    ```
     export OSC_INSTALLER=pkg/CHEF_SERVER.deb
-    
     bin/vagrant up
-
+    ```
+    
 The `open-source-demo::default` recipe also sets up the `PATH` on the virtual machine
 the add the command line tools for the versions of postgres, rabbit, erlang supplied in
 the omnibus installer .deb. It also sets up a knife.rb for the vagrant user in `$HOME/.chef`.
