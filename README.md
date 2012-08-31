@@ -4,61 +4,59 @@ Chef-server demo
 Overview
 --------
 
-Welcome to the Chef 11 Server Preview! The preview includes erchef,
-the new Chef API server written in Erlang. This repository provides
-a `Vagrantfile` and installation cookbooks to set up a self-contained
-vm running a complete Chef server environment for your demo pleasure.
+Welcome to the Chef 11 Server Preview! This preview includes
+[erchef](https://github.com/opscode/erchef/), the new Chef API server
+written in Erlang.
+
+This repository provides a `Vagrantfile` and installation cookbooks to
+set up a self-contained vm running a complete Chef server environment
+for your demo pleasure.
 
 NOTE: This is a PREVIEW release. DO NOT RUN IN A PRODUCTION ENVIRONMENT.
 
 Setting it up
 -------------
 
-In order to get started you need to have a copy of the latest omnibus
-generated preview `.deb` for chef-server. You can get this [here](http://wiki.opscode.com/display/chef/Chef+11+Server+Preview).
-To get the server running, Copy the `.deb` into a location that is shared with the VM and
-start vagrant.
-
+In order to get started, you need to have a copy of the latest omnibus
+generated preview `.deb` for chef-server. You can get this
+[here](http://wiki.opscode.com/display/chef/Chef+11+Server+Preview). Then
+follow these steps:
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (exercise left to
    the reader). Next, install the required gems using bundler. Execute the following
    commands from inside the chef-server-demo directory.
 
-    ```
-    which bundle || gem install bundler
-    bundle install --binstubs
-    ```
+       # install bundler if you don't already have it
+       which bundle || gem install bundler
+
+       # install the gems needed for chef-server-demo
+       bundle install --binstubs
     
 2. Copy the Chef server .deb [file](http://wiki.opscode.com) into the pkg
    sub-directory:
 
-    ```
-    curl -O $URL_FOR_CHEF_SERVER_DEB
-    mv CHEF_SERVER.deb pkg/
-    ```
+       curl -O $URL_FOR_CHEF_SERVER_DEB
+       mv CHEF_SERVER.deb pkg/
     
 3. Export environment variable `OSC_INSTALLER`, setting it to point at
-   the omnibus installer .deb and provision your Erchef powered Chef server:
+   the omnibus installer .deb and provision your erchef powered Chef server:
 
-    ```
-    export OSC_INSTALLER=pkg/CHEF_SERVER.deb
-    bin/vagrant up
-    ```
+       export OSC_INSTALLER=pkg/CHEF_SERVER.deb
+       bin/vagrant up
     
-The `open-source-demo::default` recipe also sets up the `PATH` on the virtual machine
-the add the command line tools for the versions of postgres, rabbit, erlang supplied in
-the omnibus installer .deb. It also sets up a knife.rb for the vagrant user in `$HOME/.chef`.
-You can use the `vagrant ssh` command to log into the running VM. You'll need to add
-the vagrant [keys](https://github.com/mitchellh/vagrant/tree/master/keys) to your SSH config to scp
-files out of the VM.
-
-You should now be able to try out knife commands against the server.
-
 Test Drive Time
 ---------------
 
+You can log into your Chef server demo vm like this:
+
+    bin/vagrant ssh
+
+You can add the vagrant
+[keys](https://github.com/mitchellh/vagrant/tree/master/keys) to your
+SSH config to scp files out of the VM.
+
 The `open-source-demo::default` recipe will have created a
-`$HOME/.chef/knife.rb` for you so that you can start issueing knife
+`$HOME/.chef/knife.rb` for you so that you can start issuing knife
 commands right away:
 
     knife client list
@@ -82,7 +80,6 @@ ability to tail all the logs produced by the individual services. *Use
 sudo or a root shell when using `chef-server-ctl`*.
 
     sudo chef-server-ctl  help
-
 
 
 LICENSE
