@@ -1,4 +1,3 @@
-
 Chef-server demo
 ================
 
@@ -23,9 +22,6 @@ generated `.deb` for chef-server.  You can get this [here](). Copy the
 
 ```
     which bundle || gem install bundler
-```
-
-```
     bundle install --binstubs
 ```
 
