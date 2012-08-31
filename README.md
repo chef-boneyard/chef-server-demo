@@ -41,7 +41,7 @@ start vagrant.
 
 ```
    export OSC_INSTALLER=pkg/CHEF_SERVER.deb
-    bin/vagrant up
+   bin/vagrant up
 ```
 
 Once the vagrant run is finished, the vagrant box will be set up and open source
