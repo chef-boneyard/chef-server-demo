@@ -4,13 +4,8 @@ Chef-server demo
 Overview
 --------
 
-<<<<<<< HEAD
-Welcome to a preview of Chef Server for Chef 11! The preview includes erchef,
-the new Chef API server written in Erlang. This repository contains
-=======
-Welcome to the Chef 11 Server Preview! The preview includes erchef,
+elcome to the Chef 11 Server Preview! The preview includes erchef,
 the new Chef API server written in Erlang. This repository provides
->>>>>>> kas/edits
 a `Vagrantfile` and installation cookbooks to set up a self-contained
 vm running a complete Chef server environment for your demo pleasure.
 
@@ -20,14 +15,10 @@ Setting it up
 -------------
 
 In order to get started you need to have a copy of the latest omnibus
-<<<<<<< HEAD
-generated preview `.deb` for chef-server.  You can get this [here](http://wiki.opscode.com/display/chef/Erchef+Open+Source+Chef+Server).
-Copy the `.deb` into a location that is shared with the VM and starting vagrant.
-=======
-generated `.deb` for chef-server. You can get this [here](http://wiki.opscode.com/display/chef/Chef+11+Server+Preview).
+generated preview `.deb` for chef-server. You can get this [here](http://wiki.opscode.com/display/chef/Chef+11+Server+Preview).
 To get the server running, Copy the `.deb` into a location that is shared with the VM and
 start vagrant.
->>>>>>> kas/edits
+
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (exercise left to
    the reader). Next, install the required gems using bundler. Execute the following
