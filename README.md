@@ -3,32 +3,40 @@ Chef-server demo
 
 Overview
 --------
-Welcome to Erchef, the new erlang based version of chef-server  ! This
-repository contains a Vagrantfile and some installation cookbooks to
-set up a running chef-server so you can try it out.
+
+Welcome to Erchef, the new Erlang based Chef server. This
+repository contains a `Vagrantfile` and installation cookbooks to
+set up a self-contained vm running a complete Chef server environment
+for your demo pleasure.
 
 Setting it up
 -------------
+
 In order to get started you need to have a copy of the latest omnibus
-generated .deb for chef-server.  You can get this [here]. Then, it's
-simply a matter of copying the .deb into a location that is shared with
-the vm and starting vagrant
+generated `.deb` for chef-server.  You can get this [here]. Then, it's
+simply a matter of copying the `.deb` into a location that is shared
+with the vm and starting vagrant.
 
-1. copy a valid open source chef omnibus installer .deb into the pkg
-   sub-directory
+1. Install [VirtualBox][] (exercise left to the reader) and then
+   install required gems using bundler:
+   
+       which bundle || gem install bundler
+       bundle install --binsubs
 
-2. export environment variable OSC_INSTALLER and set it to point at
-   the omnibus installer .deb:
+2. Copy the [Chef server omnibus .deb][] into the pkg
+   sub-directory:
 
-    > export OSC_INSTALLER=pkg/chef-server_0.10.8-194-g3f47a07-1.ubuntu.10.04_amd64.deb
+       curl -O $URL_FOR_CHEF_SERVER_DEB
+       # mv download to pkg/
 
-3. If you want, check it has been set correctly:
+3. Export environment variable `OSC_INSTALLER`, setting it to point at
+   the omnibus installer .deb and provision your Erchef powered Chef server:
 
-    > echo $OSC_INSTALLER
+      export OSC_INSTALLER=pkg/chef-server_0.10.8-198-g6d59524-1.ubuntu.10.04_amd64.deb
+      bin/vagrant up
 
-4. run:
-
-    > vagrant up
+[Chef server omnibus .deb]: http://wiki.opscode.com
+[VirtualBox]: https://www.virtualbox.org/wiki/Downloads
 
 Once the vagrant run is finished, the vagrant box will be set up and open source
 chef server will be running.  If there are any errors, they should be visible in
@@ -42,9 +50,11 @@ You should now be able to try out knife commands against the server
 
 Controlling the server
 -----------------------
-There is a single init.d style control script `chef-server-ctl`
-which controls all daemons used by the chef-server. This also provides
-the ability to tail all the logs produced by the individual services.
+
+There is a single init.d style control script `chef-server-ctl` which
+controls all daemons used by the chef-server. This also provides the
+ability to tail all the logs produced by the individual services. Use
+sudo or a root shell when using `chef-server-ctl`.
 
     # chef-server-ctl  help
     /opt/chef-server/embedded/bin/omnibus-ctl: command (subcommand)
