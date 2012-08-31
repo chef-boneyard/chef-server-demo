@@ -13,13 +13,13 @@ Setting it up
 -------------
 
 In order to get started you need to have a copy of the latest omnibus
-generated `.deb` for chef-server.  You can get this [here]. Then, it's
-simply a matter of copying the `.deb` into a location that is shared
-with the vm and starting vagrant.
+generated `.deb` for chef-server.  You can get this [here][]. Copy the
+`.deb` into a location that is shared with the VM and starting vagrant.
 
-1. Install [VirtualBox][] (exercise left to the reader) and then
-   install required gems using bundler:
-   
+1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (exercise left to
+   the reader). Next, install the required gems using bundler. Execute the following
+   commands from inside the chef-server-demo directory.
+
        which bundle || gem install bundler
        bundle install --binsubs
 
@@ -35,9 +35,6 @@ with the vm and starting vagrant.
       export OSC_INSTALLER=pkg/chef-server_0.10.8-198-g6d59524-1.ubuntu.10.04_amd64.deb
       bin/vagrant up
 
-[Chef server omnibus .deb]: http://wiki.opscode.com
-[VirtualBox]: https://www.virtualbox.org/wiki/Downloads
-
 Once the vagrant run is finished, the vagrant box will be set up and open source
 chef server will be running.  If there are any errors, they should be visible in
 the output from the vagrant up command.
@@ -45,8 +42,11 @@ the output from the vagrant up command.
 The `open-source-demo::default` recipe also sets up the `PATH` on the virtual machine
 the add the command line tools for the versions of postgres, rabbit, erlang supplied in
 the omnibus installer .deb. It also sets up a knife.rb for the vagrant user in `$HOME/.chef`.
+You can use the `vagrant ssh` command to log into the running VM. You'll need to add
+the vagrant [keys](https://github.com/mitchellh/vagrant/tree/master/keys) to your SSH config to scp
+files out of the VM.
 
-You should now be able to try out knife commands against the server
+You should now be able to try out knife commands against the server.
 
 Controlling the server
 -----------------------
