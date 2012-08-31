@@ -36,6 +36,10 @@ package installer_name do
   action :install
 end
 
+# This is just a temporary work around for dealing with
+# rspec-shared... it will be removed
+package 'git-core'
+
 # configure
 
 directory "/etc/chef-server" do
